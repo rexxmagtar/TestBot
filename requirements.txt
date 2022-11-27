@@ -1,0 +1,12 @@
+anyio==3.6.2
+certifi==2022.9.24
+h11==0.14.0
+httpcore==0.16.2
+httpx==0.23.1
+idna==3.4
+pip==21.3.1
+rfc3986==1.5.0
+setuptools==60.2.0
+sniffio==1.3.0
+style==1.1.0
+wheel==0.37.1
