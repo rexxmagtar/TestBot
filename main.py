@@ -1,7 +1,5 @@
 import sqlite3
 
-
-
 import logging
 from telegram import Update
 
@@ -12,6 +10,7 @@ from telegram.ext import (
     MessageHandler,
     filters, Updater, CallbackContext, Filters,
 )
+
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO
@@ -30,7 +29,7 @@ def start(update: Update, context: CallbackContext) -> int:
         context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a bot, как тебя зовут?")
         return 0
 
-    context.bot.send_message(chat_id=update.effective_chat.id, text="Привет, "+str(one_result[0]))
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Привет, " + str(one_result[0]))
 
 
 def get_name(update: Update, context: CallbackContext) -> int:
@@ -48,7 +47,7 @@ def get_name(update: Update, context: CallbackContext) -> int:
     conn.commit()
 
     update.message.reply_text(
-        "Привет,"+msg,
+        "Привет," + msg,
     )
     return ConversationHandler.END
 
@@ -61,8 +60,9 @@ def cancel(update: Update, context: CallbackContext) -> int:
 
     return ConversationHandler.END
 
-if __name__ == '__main__':
 
+if __name__ == '__main__':
+    print('STARTED FUCKEN WORK')
     updater = Updater(token='5764317978:AAHGYsPsCziPutNohfL2DZNclSDgQlA-8gU', use_context=True)
 
     dispatcher = updater.dispatcher
